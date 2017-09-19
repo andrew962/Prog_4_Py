@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+    {% block content %}
+    <p>Borrar persona, Nombre y apellido</p>
+        <form action="/borrar" method="POST">
+            <input type="text" name="nom" placeholder="nombre" required="required">
+            <input type="text" name="ape" placeholder="apellido" required="required">
+            <button type="submit">Enviar</button>
+        </form>
+    {% endblock %}

@@ -1,0 +1,10 @@
+Hacer una tabla llamada Libro
+
+de valores: autor, titulo, publicacion.
+
+menu seria
+1.agregar
+2.borrar
+3.listar
+4.consultar
+5.salir
