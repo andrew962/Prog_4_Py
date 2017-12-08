@@ -27,29 +27,29 @@ api = API(auth)
 # #Este trae los 10 ultimos twees que han subido a tu visualizacion
 # for status in Cursor(api.home_timeline).items(10):
 #     print(status)
-# #Este trae la lista de tus amigos
+# #Este trae la lista de tus amigos |
 # for seguidor in Cursor(api.friends).items(10):
 #     print(seguidor)
 
 class TLListener(StreamListener):
     def on_data(self, raw_data):
         data = json.loads(raw_data)
-        status = User.parse(self.api,data)
+        status = User.parse(self.api, data)
         location = status.user['location']
         if location == None:
             location = 'No Activado'
             print(location)
-        #------------------#
+        # ------------------#
         print(location)
-        #print(status)
-        #print(status.user['name']+': '+ status.text)
+        print(status)
+        # print(status.user['name']+': '+ status.text)
         creado = status.created_at
         id = status.id
         nom = status.user['name']
         tweet = status.text
-        cursor.execute('''INSERT INTO USUARIO(ID, NOMBRE, TWEETS, CREADO) VALUES(?,?,?,?)''',(id, nom, tweet, creado))
+        cursor.execute('''INSERT INTO USUARIO(ID, NOMBRE, TWEETS, CREADO) VALUES(?,?,?,?)''', (id, nom, tweet, creado))
         db.commit()
-        return(True)
+        return (True)
 
     def on_error(self, status_code):
         if status_code == 420:
@@ -60,4 +60,3 @@ try:
     twStream.filter(track=['#USA'])
 except Exception :
     pass
-

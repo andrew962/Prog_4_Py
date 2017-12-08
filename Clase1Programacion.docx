@@ -1,0 +1,43 @@
+Python-SQL
+*mySQL
+*SQLite
+*SQLAlchemy
+mysql_secure_installation
+
+conectarse a MariaDB
+
+#Para iniciar la DB
+sudo systemctl start mariadb
+
+#Para instalar los requerimientos
+mysql_secure_installation
+
+#Entrar a la DB
+mysql -u root -p
+
+#Para ver la Tablas
+show databases;
+
+#Crear la Tabla
+create database nombre;
+
+#Usar la Base de Datos
+use test
+
+#Ver la base de datos ya creada
+show tables;
+
+#Borar base de Datos
+drop database nombre;
+
+#Borrar tabla 
+drop table nombre;
+
+#Borrar la tabla si existiera
+drop table if exists nombre;
+
+#Para vaciar una tabla de todo sus valores
+truncate table nombre;
+
+#--------------------------------------------------------------------------#
+SQLite Semana3 

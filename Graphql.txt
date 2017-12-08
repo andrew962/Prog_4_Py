@@ -1,0 +1,19 @@
+Buscar que es REST?
+
+GRAPHQL
+Zadid Gudiño
+
+Proporciona una alternativa mas eficiente, potente y flexible a REST
+
+RESt
+Recursos son vasados en servidor HTTP(GET, POST,...)
+
+www.howtographql.com
+
+docs.feathersjs.com
+
+graphql.org
+ GitHub
+zgudino
+
+Banda
