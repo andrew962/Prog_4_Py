@@ -4,14 +4,7 @@ import hashlib
 #para guardar todo en memoria y no guardarlo en disco usamos :memory:
 #db = sqlite3.connect(':memory:') #DB en Memoria
 
-
-
-def cifrar_pass(passw):
-    cifrado = hashlib.sha512(passw.encode('utf-8')).hexdigest()
-    return cifrado
-
 db = sqlite3.connect('data/prueba') #DB en Disco
-db.create_function('cifrar', 1, cifrar_pass)
 cursor = db.cursor()
 cursor.execute('''CREATE TABLE clave(ID INT PRIMARY KEY,EMAIL TEXT UNIQUE, PASS TEXT)''')
 
