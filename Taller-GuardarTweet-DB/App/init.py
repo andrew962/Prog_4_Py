@@ -6,7 +6,7 @@ from tweepy.models import User
 import json
 import sqlite3
 
-db = sqlite3.connect('DB/prueba')
+db = sqlite3.connect('DB/prueba.sqlite3')
 cursor = db.cursor()
 try:
     cursor.execute('''CREATE TABLE USUARIO(ID INT PRIMARY KEY, NOMBRE TEXT, TWEETS TEXT, CREADO TEXT)''')
@@ -25,8 +25,8 @@ auth.set_access_token(atoken,asecret)
 api = API(auth)
 
 # #Este trae los 10 ultimos twees que han subido a tu visualizacion
-# for status in Cursor(api.home_timeline).items(10):
-#     print(status)
+for status in Cursor(api.home_timeline).items(10):
+    print(status)
 # #Este trae la lista de tus amigos |
 # for seguidor in Cursor(api.friends).items(10):
 #     print(seguidor)
@@ -55,8 +55,8 @@ class TLListener(StreamListener):
         if status_code == 420:
             return False
 
-try:
-    twStream = Stream(auth, TLListener())
-    twStream.filter(track=['#USA'])
-except Exception :
-    pass
+# try:
+#     twStream = Stream(auth, TLListener())
+#     twStream.filter(track=['#usa'])
+# except Exception :
+#     pass
